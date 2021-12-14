@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Getting Started! | Blynk 2.0</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Getting Started!" />
+<meta name="author" content="Aritra Mukhopadhyay" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Start your First Blynk 2.0 Project!" />
+<meta property="og:description" content="Start your First Blynk 2.0 Project!" />
+<link rel="canonical" href="http://localhost:4000/Blynk-IoT-Blogs/2021/12/09/Blynk-IOT.html" />
+<meta property="og:url" content="http://localhost:4000/Blynk-IoT-Blogs/2021/12/09/Blynk-IOT.html" />
+<meta property="og:site_name" content="Blynk 2.0" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-12-09T01:09:32+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Getting Started!" />
+<script type="application/ld+json">
+{"headline":"Getting Started!","dateModified":"2021-12-09T01:09:32+05:30","datePublished":"2021-12-09T01:09:32+05:30","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/Blynk-IoT-Blogs/2021/12/09/Blynk-IOT.html"},"author":{"@type":"Person","name":"Aritra Mukhopadhyay"},"@type":"BlogPosting","description":"Start your First Blynk 2.0 Project!","url":"http://localhost:4000/Blynk-IoT-Blogs/2021/12/09/Blynk-IOT.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/Blynk-IoT-Blogs/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/Blynk-IoT-Blogs/feed.xml" title="Blynk 2.0" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/Blynk-IoT-Blogs/">Blynk 2.0</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Getting Started!</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2021-12-09T01:09:32+05:30" itemprop="datePublished">
+        Dec 9, 2021
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Aritra Mukhopadhyay</span></span></p>
+      <h2>Start your First Blynk 2.0 Project!</h2>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>  Here we will learn how to create our first project on the Blynk IoT platform. We will connect an LED to some pin on the NodeMCU. Then we will be able to controll it both through the blynk mobile app and the web portal through computers.</p>
+
+<p>We will use <strong>NodeMCU</strong> throughout this tutorial. It is a WiFi capable Development Board based on the <em>ESP8266</em> microchip.</p>
+
+<p><a name="TOP"></a>This Tutorial contains:</p>
+
+<ol>
+  <li><a href="#Account">Account</a></li>
+  <li><a href="#Templates">Templates</a>
+    <ul>
+      <li><a href="#What_are_Templates">What are Templates?</a></li>
+      <li><a href="#How_to_Create_Templates">How to Create Templates?</a></li>
+    </ul>
+  </li>
+  <li><a href="#Datastreams">Datastreams</a>
+    <ul>
+      <li><a href="#What_are_Datastreams">What are Datastreams?</a></li>
+      <li><a href="#Setting_up_Virtual_Pins">Setting up Virtual Pins</a></li>
+    </ul>
+  </li>
+  <li><a href="#Setting_up_Web_Dashboard">Setting up Web Dashboard</a></li>
+  <li><a href="#Devices">Creating and Setting up Devices</a>
+    <ul>
+      <li><a href="#AuthToken">Through Auth Token</a></li>
+      <li><a href="#MobileApp">Through Mobile App</a></li>
+    </ul>
+  </li>
+  <li><a href="#Coding">Coding</a>
+    <ul>
+      <li><a href="#Libraries">Adding Libraries</a></li>
+      <li>Making a basic LED control project</li>
+    </ul>
+  </li>
+  <li>How to Use The Blynk App
+    <ul>
+      <li>-_- 1</li>
+      <li>-_- 2</li>
+      <li>-_- 3</li>
+    </ul>
+  </li>
+  <li>End</li>
+</ol>
+
+<hr />
+<h2 id="1-account-"><a name="Account"></a>1. Account <a href="#TOP" title="Back to Top"><img src="/Blynk-IoT-Blogs/static/back_to_top.png" height="30px" /></a></h2>
+
+<p>  First you have to go to the <a href="https://blynk.cloud/dashboard/login">Blynk Site</a> site, and make an account.</p>
+
+<p>  After you have logged in to your Blynk account, you will be able to see a dashboard like this:</p>
+
+<p><a href="/Blynk-IoT-Blogs/static/dashboard.png"><img src="/Blynk-IoT-Blogs/static/dashboard.png" alt="image" /></a></p>
+
+<hr />
+<h2 id="2-templates-"><a name="Templates"></a>2. Templates <a href="#TOP" title="Back to Top"><img src="/Blynk-IoT-Blogs/static/back_to_top.png" height="30px" /></a></h2>
+<p>  Before creating a device, you need to create a template.</p>
+<h3 id="-what-are-templates"><a name="What_are_Templates"></a>  What are Templates?</h3>
+<p>  At first, you have to create a template for each type of device you have. For example, in this tutorial, we will control an LED through a button on your smartphone or laptop. At first we will make a template for a light, then we can make a device called light and tell that it belongs to this template.<br />
+  Creating templates is somewhat like defining objects in programming and creating devices is like making instances of those objects. <strong>There can be multiple devices under the same template.</strong></p>
+
+<h3 id="-how-to-create-templates"><a name="How_to_Create_Templates"></a>  How to Create Templates?</h3>
+<p>  To create a template, first click on the new template button on the dashboard and fill up the form. I am using a NodeMCU which is based on the <em>ESP8266</em> microchip. So, I have put <strong>“Hardware = ESP8266”</strong>.<br />
+  This is how mine looks:</p>
+
+<p><a href="/Blynk-IoT-Blogs/static/templates1.png"><img src="/Blynk-IoT-Blogs/static/templates1.png" alt="image" /></a></p>
+
+<p>  Finally click on <button style="background-color: #47cfa2;border-radius:5px;border:none;padding:5px 15px 5px 15px">Done</button> button to create the template.<br />
+  After creating the template, you will see something like this:</p>
+
+<p><a href="/Blynk-IoT-Blogs/static/templates2.png"><img src="/Blynk-IoT-Blogs/static/templates2.png" alt="image" /></a></p>
+
+<p>  Under the <em>Info</em> tab, you can further edit the data you have just entered along with some other fileds.</p>
+
+<p><a name="Infos"> </a> <strong>Note</strong> that we are given 2 informations (BLYNK_TEMPLATE_ID and BLYNK_DEVICE_NAME) under this Info tab. We will need those two pieces of informations later. So, we will return to this Info tab again while writing the code.</p>
+
+<p>  Editing the <em>Metadata</em> tab is not essencial for device setup. So let us skip it and move on to the <em>Datastreams</em> tab.</p>
+
+<hr />
+<h2 id="3-datastreams-"><a name="Datastreams"></a>3. Datastreams <a href="#TOP" title="Back to Top"><img src="/Blynk-IoT-Blogs/static/back_to_top.png" height="30px" /></a></h2>
+<p>  <strong>According to Blynk:</strong> Datastreams is a way to structure data that regularly flows in and out from device. Use it for sensor data, any telemetry, or actuators.
+ </p>
+<h3 id="-what-are-datastreams"><a name="What_are_Datastreams"></a>  What are Datastreams?</h3>
+<p>  Datastreams are the channels of data that will be shared between the devices. There are various sorts of datastreams:</p>
+
+<p>  <strong>Digital and Analog Datastreams:</strong> Digital and Analog Datastreams are generally used to read data from the sensors. Setting up such a datastream might let you read temperature data from your device with a temperature sensor and view it on your smartphone. It might also be symultaneously used to automatically turn on the AC when the temperature reaches a certain value.
+<br /></p>
+
+<p>  <strong>Virtual Pins:</strong> These pins do not have any physical existence. They are mere buttons or sliders on your smartphone/laptop screen which helps you to manually interact with these devices at your own will. Such a datastream will let you set up a virtual button on your smartphone whose value you can controll manually. Thus you can setup an LED to turn on when the value of that virtual pin is 1 and turn off when that is 0. We can avail <strong>255 virtual pins</strong> in the Blynk IoT platform.</p>
+<h6 style="color: red;">*Number of possible Digital and Analog Datastreams depends on the device you are using.</h6>
+
+<p>  <strong>In this tutorial, we will concentrate on “Virtual Pins” only.</strong></p>
+
+<h3 id="-setting-up-virtual-pins"><a name="Setting_up_Virtual_Pins"></a>  Setting up Virtual Pins</h3>
+
+<p>  To setup a Virtual Pin, navigate to the Datastream tab, <strong>hover</strong> on the <button style="background-color: #47cfa2;border-radius:5px;border:none;padding:7px"><strong>+</strong> New Datastream</button> button and select <strong>Virtual Pin</strong>. Next, fill up the form.<br />
+  I have taken Virtual Pin <strong>V0</strong> (available V0-V255). Here we will controll an LED by reading the value from this pin. It has only two states (i.e.: on and off). So we will set datatype as <strong>Integer</strong> and set the minimum and maximum values to be <strong>0 and 1</strong>. Default value is your choice!</p>
+
+<p>  Mine looks like this:</p>
+
+<p><a href="/Blynk-IoT-Blogs/static/datastream.png"><img src="/Blynk-IoT-Blogs/static/datastream.png" alt="image" /></a></p>
+
+<p>  When done, click on <button style="background-color: #47cfa2;border-radius:5px;border:none;padding:7px">Create</button> button to create the datastream.</p>
+
+<h2 id="4-setting-up-web-dashboard-"><a name="Setting_up_Web_Dashboard"></a>4. Setting up Web Dashboard <a href="#TOP" title="Back to Top"><img src="/Blynk-IoT-Blogs/static/back_to_top.png" height="30px" /></a></h2>
+<p>  This is the dashboard you will be using to control your devices. Though the web dashboard and the app dashboard works exactly the same way, you will have to setup both of them separately. :(</p>
+
+<p>  Next move on to the <em>Web Dashboard</em> tab, drag and drop a switch in the working area (You might also like to add an LED which will show you the current state of the actual LED). You can resize the buttons.</p>
+
+<p>  Finally click on the nut icon <img src="/Blynk-IoT-Blogs/static/settings.png" height="15px" /> on the top left corner of the switch which you have just dragged and dropped onto your working area. Select the datastream you have just created and fill the rest of the informations according to your needs. <strong>Save</strong> it at the end.</p>
+
+<p>  I have filled it up like this:</p>
+
+<p><a href="/Blynk-IoT-Blogs/static/WebDashboard.png"><img src="/Blynk-IoT-Blogs/static/WebDashboard.png" alt="image" /></a></p>
+
+<p>  If you have brought the LED to the workspace, which will show you the current state of the actual LED, you need to connect that to to the required datastream too (in my case V0). Click on the <img src="/Blynk-IoT-Blogs/static/settings.png" height="15px" /> icon to do that.</p>
+
+<p>  This is how my Web Dashboard came up to be:</p>
+
+<p><a href="/Blynk-IoT-Blogs/static/WebDashboard2.png"><img src="/Blynk-IoT-Blogs/static/WebDashboard2.png" alt="image" /></a></p>
+
+<p>  When you are done click <button style="background-color: #47cfa2;border-radius:5px;border:none;padding:5px 15px 5px 15px">Save</button> on the top right.</p>
+<h4 id="congratulations-your-template-is-ready">Congratulations! Your template is ready!</h4>
+
+<h2 id="5-creating-and-setting-up-devices-"><a name="#Devices"></a>5. Creating and Setting up Devices <a href="#TOP" title="Back to Top"><img src="/Blynk-IoT-Blogs/static/back_to_top.png" height="30px" /></a></h2>
+<p>  Now that we have our template, we can create multiple devices from the same template. There are two ways of creating a device:</p>
+
+<ol>
+  <li>
+    <p><strong>Through Mobile App:</strong> In this way, we won’t upload the WiFi connecting credentials in the Code of the NodeMCU. After uploading the code, we will (sort of) login to the NodeMCU through Blynk Mobile App and enter the WiFi credentials there. You need to keep only the <em>BLYNK_TEMPLATE_ID</em> and <em>BLYNK_DEVICE_NAME</em> in the code. You will get that in the <em>Info</em> tab of the template (as mentioned <a href="#Infos">above</a>). When the Blynk Mobile App connects to the device, it will automatically save the WiFi credentials and the Auth Token to the <em>EEPROM</em> of the NodeMCU. It will generate an Auth Token while creating a device.</p>
+  </li>
+  <li>
+    <p><strong>Through Auth Token:</strong> The last method only worked with the help of Blynk Mobile App, but this process can be followed in both Mobile/PC. Here we will virtually create a device. Then we would be provided with an Auth Token. We would include <strong><em>Template ID</em></strong>, <strong><em>Device Name</em></strong>, <strong><em>Authorisation Token</em></strong>, <strong><em>WiFi SSID</em></strong> and, <strong><em>WiFi Password</em></strong> in our code. Then the device will work without any further setup through both the Blynk App and the web interface.</p>
+  </li>
+</ol>
+
+<p>  We will learn both the processes in detail. We will only learn the second method (Through Auth Token) now. We will learn the Mobile App method while learning how to use the app towards the end of this page.</p>
+
+<h3 id="-through-auth-token"><a name="AuthToken"></a>  Through Auth Token</h3>
+
+<p>  Go to the search tab on the navigation bar on the left.</p>
+
+<p><a href="/Blynk-IoT-Blogs/static/AuthToken1.png"><img src="/Blynk-IoT-Blogs/static/AuthToken1.png" alt="image" /></a></p>
+
+<p>  Then Click on <button style="background-color: #47cfa2; border-radius:5px;border:none;padding:7px"><strong>+</strong> New Device</button> button and select to add a device from Template (the other options are not for us). Select the template name and name the device. I will use a green LED. So I kept the name of my device as <strong>Green LED</strong>.</p>
+
+<p>  Now, on the top right corner, you will see a pop up like this:</p>
+
+<p><a href="/Blynk-IoT-Blogs/static/AuthToken2.png"><img src="/Blynk-IoT-Blogs/static/AuthToken2.png" alt="image" /></a></p>
+
+<p>  This contains all the informations which are needed to be put into the code apart from the WiFi credentials.</p>
+
+<h3 id="what-you-clicked-on-the-cross-by-mistake-dont-worry-you-can-always-find-these-informations-under-the-device-info-tab"><b>What? You clicked on the cross by mistake?</b>  Don’t worry, you can always find these informations under the <em>Device Info</em> tab.</h3>
+
+<h3 id="-through-mobile-app"><a name="MobileApp"></a>  Through Mobile App</h3>
+<p>  We need to know about the code before setting up the device through MobileApp. So, please skip to <a href="#...">here</a> if you know the coding part. the top right.</p>
+
+<h2 id="6-coding-"><a name="#Coding"></a>6. Coding <a href="#TOP" title="Back to Top"><img src="/Blynk-IoT-Blogs/static/back_to_top.png" height="30px" /></a></h2>
+<p>  We will complete the coding part in the <strong>Arduino IDE</strong>. At first, we need to install some libraries into it.</p>
+
+<h3 id="-installing-libraries"><a name="Libraries"></a>  Installing Libraries</h3>
+
+<p>  We would need to install <em>ESP8266 Board</em> and the <em>Blynk Library</em> in the Arduino IDE:</p>
+<ol>
+  <li><strong>ESP8266 Board:</strong> In the Arduino IDE, go to:</li>
+</ol>
+
+<ul>
+  <li>File -&gt; Prefferences -&gt; Paste this link <code class="language-plaintext highlighter-rouge">http://arduino.esp8266.com/stable/package_esp8266com_index.json</code> in <em>Additional Boards Manager URLs</em> field -&gt; OK</li>
+</ul>
+
+<p><a href="/Blynk-IoT-Blogs/static/InstallBoard1.png"><img src="/Blynk-IoT-Blogs/static/InstallBoard1.png" alt="image" /></a></p>
+
+<p>  …next in the Arduino IDE, go to:</p>
+
+<ul>
+  <li>Tools -&gt; Board: -&gt; Board Manager… -&gt; Search <strong>“ESP8266”</strong> -&gt; install it -&gt; Close it -&gt; Again go to Tools -&gt; Board: -&gt; Select <strong>“NodeMCU 1.0 (ESP-12E Module)”</strong></li>
+</ul>
+
+<ol>
+  <li><strong>Blynk Library:</strong>
+First click <a href="https://github.com/blynkkk/blynk-library/archive/refs/heads/master.zip"><strong>here ⬇</strong></a> to download the code from this GitHub repository <a href="https://github.com/blynkkk/blynk-library/releases">https://github.com/blynkkk/blynk-library</a> as a <strong>.ZIP</strong> file.</li>
+</ol>
+
+<p>  Then in the Arduino IDE, go to:</p>
+
+<ul>
+  <li>Sketch -&gt; Include Library -&gt; Add .ZIP Library… -&gt; Select the downloaded .ZIP file -&gt; Choose</li>
+</ul>
+
+
+  </div><a class="u-url" href="/Blynk-IoT-Blogs/2021/12/09/Blynk-IOT.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/Blynk-IoT-Blogs/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Blynk 2.0</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Blynk 2.0</li><li><a class="u-email" href="mailto:amukherjeeniser@gmail.com">amukherjeeniser@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/PeithonKing"><svg class="svg-icon"><use xlink:href="/Blynk-IoT-Blogs/assets/minima-social-icons.svg#github"></use></svg> <span class="username">PeithonKing</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This is a Blog Post from the RoboTech Club of NISER. It describes in detail every aspect of using the Blynk platform for IOT projects.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
